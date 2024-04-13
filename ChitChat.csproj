@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-ChitChat-50ecaf42-21d6-4616-92e8-57ed19322c85</UserSecretsId>
-	  <InveriantGlobalization>true</InveriantGlobalization>
+	  <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
