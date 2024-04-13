@@ -15,11 +15,12 @@ namespace ChitChat.Services
             {
                 return defaultImage;
             }
+
             try
             {
                 //convert to base 64 because the file is coming from storage.
                 string imageBase64Data = Convert.ToBase64String(fileData);
-                return string.Format($"data:{extension}: base64,{imageBase64Data}");
+                return string.Format($"data:{extension}; base64,{imageBase64Data}");
             }
             catch (Exception)
             {
