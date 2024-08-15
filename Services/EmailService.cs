@@ -37,6 +37,7 @@ namespace ChitChat.Services
             BodyBuilder emailBody = new();
             emailBody.HtmlBody = htmlMessage;
             newEmail.Body = emailBody.ToMessageBody();
+            //Assembles the body of the email.
 
             //We need to login to our smtp client
             using SmtpClient smtpClient = new();//using MailKit.Net.Smtp;

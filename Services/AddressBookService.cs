@@ -130,5 +130,35 @@ namespace ChitChat.Services
         {
             throw new NotImplementedException();
         }
+
+        //Task<ICollection<Category>> IAddressBookService.GetContactCategoriesAsync(int contactId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<ICollection<Category>> IAddressBookService.GetContactCategoriesAsync(int contactId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<IEnumerable<Category>> IAddressBookService.GetUserCategoriesAsync(string userId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<IEnumerable<Category>> IAddressBookService.GetUserCategoriesAsync(string userId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //IEnumerable<Contact> IAddressBookService.SearchForContacts(string searchString, string userId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //IEnumerable<Contact> IAddressBookService.SearchForContacts(string searchString, string userId)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

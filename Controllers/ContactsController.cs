@@ -10,8 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-
-
 namespace ChitChat.Controllers
 {
     public class ContactsController : Controller
@@ -103,9 +101,10 @@ namespace ChitChat.Controllers
         public async Task<IActionResult> EmailContact(int contactId)
         {
             string appuserId = _userManager.GetUserId(User)!;
+            //current contact being passed in from the db
             Contact contact = await _context.Contacts.Where(c => c.Id == contactId && c.AppUserId == appuserId)
                                                      .FirstOrDefaultAsync();
-            //current contact being passed in.
+
             if (contact == null)
             {
                 return NotFound();
@@ -174,7 +173,7 @@ namespace ChitChat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,BirthDate,Address1,Address2,City,State,ZipCode,Email,PhoneNumber,ImageFile")] Contact contact, List<int> CategoryList)
+        public async Task<IActionResult> Create([Bind("FirstName,LastName,BirthDate,Address1,Address2,City,State,ZipCode,Email,PhoneNumber")] Contact contact, List<int> CategoryList)
         {
             ModelState.Remove("AppUserId");
             //Its required but the person doesnt type it into a field so its not in the incoming form.
@@ -267,6 +266,7 @@ namespace ChitChat.Controllers
                 try
                 {
                     contact.Created = DateTime.SpecifyKind(contact.Created, DateTimeKind.Utc);
+
                     if (contact.BirthDate != null)
                     {
                         contact.BirthDate = DateTime.SpecifyKind(contact.BirthDate.Value, DateTimeKind.Utc);

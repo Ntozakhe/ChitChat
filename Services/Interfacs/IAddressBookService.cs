@@ -8,10 +8,10 @@ namespace ChitChat.Services.Interfacs
         //when we save a contact, we want to add a category it belongs to.
 
         Task<bool> IsContactInCategory(int categoryId, int contactId);
-        //We'll use thisone during the edit phase. When we present the list and check the ne we want.
+        //We'll use this one during the edit phase. When we present the list and check the ne we want.
 
         Task<IEnumerable<Category>> GetUserCategoriesAsync(string userId);
-        //This will return a list of Categories that will bind to that drop down
+        //This will return a list of Categories that will bind to the drop down on create/Edit page
 
         Task<ICollection<int>> GetContactCategoryIdsAsAsync(int contactId);
         //for given contact, return all of the category id's they're selected in.

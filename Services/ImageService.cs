@@ -14,6 +14,7 @@ namespace ChitChat.Services
             if (fileData == null)
             {
                 return defaultImage;
+                //or we can return null if we dont need a default image.
             }
 
             try
