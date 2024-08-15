@@ -43,9 +43,9 @@ namespace ChitChat.Services
             using SmtpClient smtpClient = new();//using MailKit.Net.Smtp;
             try
             {
-                var host = _mailSettings.Host ?? Environment.GetEnvironmentVariable("Host");
-                var port = _mailSettings.Port != 0 ? _mailSettings.Port : int.Parse(Environment.GetEnvironmentVariable("Port")!);
-                var password = _mailSettings.Password ?? Environment.GetEnvironmentVariable("Password");
+                var host = _mailSettings.MailHost ?? Environment.GetEnvironmentVariable("MailHost");
+                var port = _mailSettings.MailPort != 0 ? _mailSettings.MailPort : int.Parse(Environment.GetEnvironmentVariable("Port")!);
+                var password = _mailSettings.MailPassword ?? Environment.GetEnvironmentVariable("MailPassword");
 
                 //connect
                 await smtpClient.ConnectAsync(host, port, SecureSocketOptions.StartTls);
