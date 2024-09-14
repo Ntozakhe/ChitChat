@@ -1,4 +1,16 @@
-﻿namespace ChitChat.Controllers
+﻿using ChitChat.Data;
+using ChitChat.Enums;
+using ChitChat.Models;
+using ChitChat.Models.ViewModels;
+using ChitChat.Services.Interfacs;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+
+namespace ChitChat.Controllers
 {
     public class ContactsController : Controller
     {
